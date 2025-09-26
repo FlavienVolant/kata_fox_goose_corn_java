@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import example.entity.Item;
 import example.entity.You;
 
 public class BoatTest {
@@ -43,5 +44,14 @@ public class BoatTest {
         assertTrue(this.boat.hasCaptain());
         assertTrue(this.boat.contains(replace));
         assertFalse(this.boat.contains(ejected));
+    }
+
+    @Test
+    public void embarkAnItemSuccedTest() {
+        Item item = new ItemMock();
+
+        this.boat.embark(item);
+
+        assertTrue(this.boat.contains(item));
     }
 }
