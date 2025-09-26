@@ -22,6 +22,7 @@ public class BoatTest {
 
         this.boat.embark(you); // you should be on the boat
 
+        assertTrue(this.boat.hasCaptain());
         assertTrue(this.boat.contains(you));
     }
 }
