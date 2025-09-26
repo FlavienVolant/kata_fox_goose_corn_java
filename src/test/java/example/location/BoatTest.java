@@ -1,5 +1,6 @@
 package example.location;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -24,5 +25,10 @@ public class BoatTest {
 
         assertTrue(this.boat.hasCaptain());
         assertTrue(this.boat.contains(you));
+    }
+
+    @Test
+    public void atCreationBoatShouldNothabeACaptain() {
+        assertFalse(this.boat.hasCaptain());
     }
 }
