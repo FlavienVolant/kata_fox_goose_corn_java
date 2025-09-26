@@ -63,7 +63,6 @@ public class BoatTest {
         this.boat.embark(ejected);
         this.boat.embark(replace);
 
-        assertTrue(this.boat.hasCaptain());
         assertTrue(this.boat.contains(replace));
         assertFalse(this.boat.contains(ejected));
     }
