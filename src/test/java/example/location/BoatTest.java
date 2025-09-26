@@ -54,4 +54,17 @@ public class BoatTest {
 
         assertTrue(this.boat.contains(item));
     }
+
+    @Test
+    public void whenANewItemEmbarkTheLastOneIsEjected() {
+        Item ejected = new ItemMock();
+        Item replace = new ItemMock();
+        
+        this.boat.embark(ejected);
+        this.boat.embark(replace);
+
+        assertTrue(this.boat.hasCaptain());
+        assertTrue(this.boat.contains(replace));
+        assertFalse(this.boat.contains(ejected));
+    }
 }
