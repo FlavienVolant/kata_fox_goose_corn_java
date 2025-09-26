@@ -27,4 +27,8 @@ public class Coast {
     public boolean contains(Item item) {
         return this.items.contains(item);
     }
+
+    public void remove(Item item) {
+        this.items.remove(item);
+    }
 }

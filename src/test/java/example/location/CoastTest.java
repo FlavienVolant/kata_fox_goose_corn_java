@@ -24,7 +24,7 @@ public class CoastTest {
     }
 
     @Test
-    public void addItemsSucced() {
+    public void addItemSucced() {
         Item item = new ItemMock();
         this.coast.add(item);
         assertTrue(this.coast.contains(item));
@@ -46,6 +46,15 @@ public class CoastTest {
         assertTrue(this.coast.contains(item3));
 
         assertEquals(3, this.coast.getItems().size());
+    }
+
+    @Test
+    public void removeItemSucced(){
+        Item item = new ItemMock();
+        this.coast.add(item);
+        this.coast.remove(item);
+        assertTrue(this.coast.isEmpty());
+        assertEquals(0, this.coast.getItems().size());
     }
 
 }
