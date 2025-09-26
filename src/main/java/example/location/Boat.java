@@ -30,6 +30,8 @@ public class Boat{
     }
 
     public void cross() throws BoatAsNoCaptainException{
-        throw new BoatAsNoCaptainException();
+        if(!this.hasCaptain())
+            throw new BoatAsNoCaptainException();
+        
     }
 }
