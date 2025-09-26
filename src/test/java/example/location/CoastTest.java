@@ -31,4 +31,21 @@ public class CoastTest {
         assertEquals(1, this.coast.getItems().size());
     }
 
+    @Test
+    public void addThreeItemsSucced() {
+        Item item1 = new ItemMock();
+        Item item2 = new ItemMock();
+        Item item3 = new ItemMock();
+
+        this.coast.add(item1);
+        this.coast.add(item2);
+        this.coast.add(item3);
+
+        assertTrue(this.coast.contains(item1));
+        assertTrue(this.coast.contains(item2));
+        assertTrue(this.coast.contains(item3));
+
+        assertEquals(3, this.coast.getItems().size());
+    }
+
 }
