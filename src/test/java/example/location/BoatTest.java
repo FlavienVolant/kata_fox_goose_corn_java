@@ -31,4 +31,17 @@ public class BoatTest {
     public void atCreationBoatShouldNothabeACaptain() {
         assertFalse(this.boat.hasCaptain());
     }
+
+    @Test
+    public void whenANewYouEmbarkTheLastOneIsEjected() {
+        You ejected = new You();
+        You replace = new You();
+        
+        this.boat.embark(ejected);
+        this.boat.embark(replace);
+
+        assertTrue(this.boat.hasCaptain());
+        assertTrue(this.boat.contains(replace));
+        assertFalse(this.boat.contains(ejected));
+    }
 }
