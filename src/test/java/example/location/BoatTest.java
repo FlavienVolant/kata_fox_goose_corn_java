@@ -1,5 +1,6 @@
 package example.location;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -76,5 +77,14 @@ public class BoatTest {
             () -> this.boat.cross(),
             "Expected boat.cross() to throw when there is no captain, but it didn't"
         );
+    }
+
+    @Test
+    public void boatCanCrossWithACaptainSmokeTest() throws BoatAsNoCaptainException {
+        You captain = new You();
+
+        this.boat.embark(captain);
+
+        assertDoesNotThrow(() -> this.boat.cross()); 
     }
 }
