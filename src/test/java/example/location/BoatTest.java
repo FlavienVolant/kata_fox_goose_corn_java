@@ -87,4 +87,8 @@ public class BoatTest {
 
         assertDoesNotThrow(() -> this.boat.cross()); 
     }
+
+    // TODO
+    // - remove captain (succes, no captain)
+    // - remove item (succes, no item)
 }

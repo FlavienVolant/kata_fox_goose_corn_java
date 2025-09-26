@@ -29,6 +29,18 @@ public class Boat{
         return this.you != null;
     }
 
+    public You popCaptain() {
+        You you = this.you;
+        this.you = null;
+        return you;
+    }
+
+    public Item popItem() {
+        Item item = this.item;
+        this.item = null;
+        return item;
+    }
+
     public void cross() throws BoatAsNoCaptainException{
         if(!this.hasCaptain())
             throw new BoatAsNoCaptainException();
