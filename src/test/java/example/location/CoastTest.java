@@ -57,4 +57,27 @@ public class CoastTest {
         assertEquals(0, this.coast.getItems().size());
     }
 
+    @Test
+    public void removeThreeItemsSucced() {
+        Item item1 = new ItemMock();
+        Item item2 = new ItemMock();
+        Item item3 = new ItemMock();
+
+        this.coast.add(item1);
+        this.coast.add(item2);
+        this.coast.add(item3);
+
+        this.coast.remove(item1);
+        this.coast.remove(item2);
+        this.coast.remove(item3);
+
+        assertTrue(this.coast.isEmpty());
+        assertEquals(0, this.coast.getItems().size());
+    }
+
+    // TODO
+    // - add null 
+    // - add same item two times
+    // - remove null
+    // - remove item not in
 }
