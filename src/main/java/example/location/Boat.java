@@ -10,8 +10,8 @@ public class Boat{
         this.you = you;
     }
 
-    public Boolean contains(You you2) {
-        return hasCaptain();   
+    public Boolean contains(You you) {
+        return this.you.equals(you);
     }
 
     public Boolean hasCaptain() {
