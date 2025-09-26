@@ -19,4 +19,12 @@ public class Coast {
     public List<Item> getItems() {
         return items;
     }
+
+    public void add(Item item) {
+        this.items.add(item);
+    }
+
+    public boolean contains(Item item) {
+        return this.items.contains(item);
+    }
 }
