@@ -1,6 +1,7 @@
 package example.location;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -8,6 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import example.entity.Item;
 import example.entity.You;
+import example.location.exception.BoatAsNoCaptainException;
 
 public class BoatTest {
 
@@ -65,5 +67,14 @@ public class BoatTest {
 
         assertTrue(this.boat.contains(replace));
         assertFalse(this.boat.contains(ejected));
+    }
+
+    @Test
+    public void boatCannotCrossWithoutACaptain() {
+        assertThrows(
+            BoatAsNoCaptainException.class, 
+            () -> this.boat.cross(),
+            "Expected boat.cross() to throw when there is no captain, but it didn't"
+        );
     }
 }

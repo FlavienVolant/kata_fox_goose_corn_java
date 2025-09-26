@@ -2,6 +2,7 @@ package example.location;
 
 import example.entity.Item;
 import example.entity.You;
+import example.location.exception.BoatAsNoCaptainException;
 
 public class Boat{
 
@@ -26,5 +27,9 @@ public class Boat{
 
     public Boolean hasCaptain() {
         return this.you != null;
+    }
+
+    public void cross() throws BoatAsNoCaptainException{
+        throw new BoatAsNoCaptainException();
     }
 }
