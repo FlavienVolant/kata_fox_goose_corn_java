@@ -34,18 +34,20 @@ public class App {
     }
 
     public void cross() throws InvalidPositionException, BoatAsNoCaptainException {
+        System.out.println(this);
         boat.cross();
         left.validate();
         right.validate();
         boatIsLeftCoast = !boatIsLeftCoast;
+        System.out.println(this);
     }
 
     public void run() throws BoatAsNoCaptainException, InvalidPositionException {
         System.out.println(this);
-
+        // CHATGPT
         // 1️⃣ You traverse avec Goose
         boat.embark(you);
-        boat.embark(fox);
+        boat.embark(goose);
         left.remove(you);
         left.remove(goose);
         this.cross();
