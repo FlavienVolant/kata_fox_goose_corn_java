@@ -44,6 +44,24 @@ public class Boat{
     public void cross() throws BoatAsNoCaptainException{
         if(!this.hasCaptain())
             throw new BoatAsNoCaptainException();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("<");
+        if (you != null)
+            sb.append(":").append(you.toString());
+        else 
+            sb.append(":_");
         
+        sb.append(" ");
+
+        if (item != null) 
+            sb.append(":").append(item.toString());
+        else
+            sb.append(":_");
+
+        sb.append(">");
+        return sb.toString();
     }
 }

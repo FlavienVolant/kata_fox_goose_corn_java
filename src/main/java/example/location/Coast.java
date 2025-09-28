@@ -2,6 +2,7 @@ package example.location;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import example.entity.Item;
 import example.entity.You;
@@ -49,5 +50,22 @@ public class Coast {
                 }
             }
         }
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("[");
+        
+        if (you != null)
+            sb.append(" :").append(you.toString());
+
+        if (items != null && !items.isEmpty()) {
+            sb.append(items.stream()
+                           .map(item -> " :" + item.toString())
+                           .collect(Collectors.joining("")));
+        }
+
+        sb.append(" ]");
+        return sb.toString();
     }
 }
