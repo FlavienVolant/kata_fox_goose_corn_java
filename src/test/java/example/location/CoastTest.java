@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import example.entity.Corn;
 import example.entity.Fox;
 import example.entity.Goose;
 import example.entity.Item;
@@ -104,7 +105,31 @@ public class CoastTest {
         this.coast.add(you);
 
         assertDoesNotThrow(() -> this.coast.validate());
+    }
 
+    @Test
+    public void whenValidateHavingAGooseWithACornWithoutYouIsAnInvalidPosition() {
+        Item corn = new Corn();
+        Item goose = new Goose();
+
+        this.coast.add(corn);
+        this.coast.add(goose);
+
+        assertThrows(InvalidPositionException.class,
+            () -> this.coast.validate());
+    }
+
+    @Test
+    public void whenValidateHavingAGooseWithACornWithYouIsAnValidPosition() {
+        Item corn = new Corn();
+        Item goose = new Goose();
+        You you = new You();
+
+        this.coast.add(corn);
+        this.coast.add(goose);
+        this.coast.add(you);
+
+        assertDoesNotThrow(() -> this.coast.validate());
     }
 
     // TODO
