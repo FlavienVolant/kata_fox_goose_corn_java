@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import example.entity.Item;
+import example.location.exception.InvalidPositionException;
 
 public class Coast {
     private List<Item> items;
@@ -30,5 +31,15 @@ public class Coast {
 
     public void remove(Item item) {
         this.items.remove(item);
+    }
+
+    public void validate() throws InvalidPositionException{
+        for(Item a : this.items) {
+            for(Item b : this.items){
+                if(a.canEat(b)) {
+                    throw new InvalidPositionException();
+                }
+            }
+        }
     }
 }

@@ -8,5 +8,9 @@ public class ItemMock extends Item{
     public String getName() {
         return "Mock";
     }
-    
+
+    @Override
+    public Boolean canEat(Item other) {
+        return false;
+    }
 }

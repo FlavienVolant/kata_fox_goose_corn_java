@@ -6,5 +6,9 @@ public class Fox extends Item{
     public String getName() {
         return "Fox";
     }
-    
+
+    @Override
+    public Boolean canEat(Item other) {
+        return other instanceof Goose;
+    }
 }
