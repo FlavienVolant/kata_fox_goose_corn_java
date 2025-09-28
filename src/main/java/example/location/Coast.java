@@ -36,6 +36,14 @@ public class Coast {
         return this.items.contains(item);
     }
 
+    public You remove(You you) {
+        if(this.you.equals(you)) {
+            this.you = null;
+        }
+
+        return you;
+    }
+
     public void remove(Item item) {
         this.items.remove(item);
     }
