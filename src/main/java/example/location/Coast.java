@@ -3,32 +3,32 @@ package example.location;
 import java.util.ArrayList;
 import java.util.List;
 
-import example.entity.Entity;
+import example.entity.Item;
 
 public class Coast {
-    private List<Entity> entities;
+    private List<Item> items;
 
     public Coast() {
-        this.entities = new ArrayList<>();
+        this.items = new ArrayList<>();
     }
 
     public Boolean isEmpty() {
-        return entities.isEmpty();
+        return items.isEmpty();
     }
 
-    public List<Entity> getEntities() {
-        return entities;
+    public List<Item> getItems() {
+        return items;
     }
 
-    public void add(Entity entity) {
-        this.entities.add(entity);
+    public void add(Item item) {
+        this.items.add(item);
     }
 
-    public boolean contains(Entity entity) {
-        return this.entities.contains(entity);
+    public boolean contains(Item item) {
+        return this.items.contains(item);
     }
 
-    public void remove(Entity entity) {
-        this.entities.remove(entity);
+    public void remove(Item item) {
+        this.items.remove(item);
     }
 }
