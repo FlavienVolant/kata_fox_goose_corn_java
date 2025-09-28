@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import example.entity.Item;
+import example.entity.You;
 import example.location.exception.InvalidPositionException;
 
 public class Coast {
     private List<Item> items;
+    private You you;
 
     public Coast() {
         this.items = new ArrayList<>();
@@ -19,6 +21,10 @@ public class Coast {
 
     public List<Item> getItems() {
         return items;
+    }
+
+    public void add(You you) {
+        this.you = you;
     }
 
     public void add(Item item) {
@@ -34,10 +40,12 @@ public class Coast {
     }
 
     public void validate() throws InvalidPositionException{
-        for(Item a : this.items) {
-            for(Item b : this.items){
-                if(a.canEat(b)) {
-                    throw new InvalidPositionException();
+        if(this.you == null) {
+            for(Item a : this.items) {
+                for(Item b : this.items){
+                    if(a.canEat(b)) {
+                        throw new InvalidPositionException();
+                    }
                 }
             }
         }

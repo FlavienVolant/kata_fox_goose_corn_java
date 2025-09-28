@@ -1,5 +1,6 @@
 package example.location;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -10,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import example.entity.Fox;
 import example.entity.Goose;
 import example.entity.Item;
+import example.entity.You;
 import example.location.exception.InvalidPositionException;
 
 public class CoastTest {
@@ -89,6 +91,20 @@ public class CoastTest {
 
         assertThrows(InvalidPositionException.class,
             () -> this.coast.validate());
+    }
+
+    @Test
+    public void whenValidateHavingAFoxWithAGooseWithYouIsAnValidPosition() {
+        Item fox = new Fox();
+        Item goose = new Goose();
+        You you = new You();
+
+        this.coast.add(fox);
+        this.coast.add(goose);
+        this.coast.add(you);
+
+        assertDoesNotThrow(() -> this.coast.validate());
+
     }
 
     // TODO
