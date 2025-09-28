@@ -1,5 +1,6 @@
 # kata_fox_goose_corn_java
 
+This kata is inspired by [fox-goose-bag-of-corn](https://github.com/gigasquid/wonderland-clojure-katas/tree/master/fox-goose-bag-of-corn).
 
 ## HOW TO 
 
